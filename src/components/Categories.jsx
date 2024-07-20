@@ -1,27 +1,38 @@
+import {
+	FaComputer,
+	FaBook,
+	FaTv,
+	FaPlaneUp,
+	FaFilm,
+	FaBookOpen,
+	FaMusic,
+	FaCamera,
+} from "react-icons/fa6";
+
+const rooms = [
+	{ id: "silicone", Component: FaComputer, label: "ซิลิคอนวัลเลย์" },
+	{ id: "library", Component: FaComputer, label: "ห้องสมุด" },
+	{ id: "tv", Component: FaTv, label: "บางขุนพรหม" },
+	{ id: "abroad", Component: FaPlaneUp, label: "ไกลบ้าน" },
+	{ id: "movie", Component: FaFilm, label: "เฉลิมไทย" },
+	{ id: "cartoon", Component: FaBookOpen, label: "การ์ตูน" },
+	{ id: "music", Component: FaMusic, label: "เฉลิมกรุง" },
+	{ id: "camera", Component: FaCamera, label: "กล้อง" },
+];
+
 export default function Categories() {
 	return (
 		<section className="bg-white py-8">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex justify-center overflow-x-scroll py-4 space-x-4">
-					{[
-						"Icons",
-						"Beachfront",
-						"Rooms",
-						"Amazing views",
-						"Design",
-						"Castles",
-						"OMG!",
-						"Cabins",
-					].map((category) => (
-						<div key={category} className="flex-shrink-0">
-							<div className="text-center px-4">
-								<img
-									className="h-12 w-12 rounded-full mx-auto"
-									src={`/${category.toLowerCase().replace(/ /g, "-")}.png`}
-									alt={category}
-								/>
-								<p className="mt-2 text-gray-600">{category}</p>
-							</div>
+				<h1 className="text-center text-2xl font-bold">เลือกห้อง</h1>
+				<div className="grid grid-cols-4 gap-4 my-4 text-purple-600">
+					{rooms.map(({ id, Component, label }) => (
+						<div
+							className="text-4xl md:text-5xl transition-all duration-300 transform hover:scale-110 hover:text-indigo-400 flex flex-col items-center hover:cursor"
+							key={id}
+						>
+							<Component />
+							<p className="text-sm mt-2 text-center">{label}</p>
 						</div>
 					))}
 				</div>

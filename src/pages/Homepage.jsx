@@ -1,7 +1,8 @@
 import NavBar from "../components/NavBar.jsx";
 import Hero from "../components/Hero.jsx";
 import Categories from "../components/Categories.jsx";
-import Experiences from "../components/Experiences.jsx";
+import SiliconValley from "../components/Rooms/SiliconValley.jsx";
+import Footer from "../components/Footer.jsx";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -23,16 +24,18 @@ export default function Homepage() {
 	}, []);
 
 	return (
-		<div className="bg-gray-100">
+		<div className="bg-gray-100 ">
 			<NavBar />
-			<header>
+			<section className="bg-gradient-to-t from-purple-400 to-indigo-200 h-full">
 				<Hero />
-				<Categories />
-			</header>
+			</section>
+
 			{/* Experiences */}
 			<main>
-				<Experiences />
+				<Categories />
+				<SiliconValley />
 			</main>
+			<Footer />
 		</div>
 	);
 }

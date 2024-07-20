@@ -1,3 +1,5 @@
+import { FaMagnifyingGlass } from "react-icons/fa6";
+
 export default function NavBar() {
 	return (
 		<nav className="bg-white shadow">
@@ -10,6 +12,15 @@ export default function NavBar() {
 						className="hidden md:block h-8"
 					/>
 				</picture>
+				<section className="hidden lg:block relative">
+					<input
+						type="text"
+						placeholder="หากระทู้ที่สนใจ"
+						className="px-5 rounded-full shadow-lg border border-neutral-300 w-96 h-10"
+					/>
+					<FaMagnifyingGlass className="absolute top-3 right-3 items-center  cursor-pointer" />
+				</section>
+
 				<nav className="space-x-4">
 					<a href="#" className="text-gray-500 hover:text-gray-900">
 						Home
