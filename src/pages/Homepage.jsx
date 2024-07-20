@@ -18,22 +18,22 @@ export default function Homepage() {
 	const [pantipData, setPantipData] = useState({});
 
 	//get information from pantip
-	/* async function getDataFromPantip() {
-		const response = await fetch(
+	async function getDataFromPantip() {
+		const response = await axios.get(
 			"https://pantip.com/api/forum-service/home/get_suggest_topic_popular"
 		);
 		const { data } = await response.json();
 		setPantipData(data);
 		console.log(data);
-	} */
+	}
 
 	function scrollToTop() {
 		window.scroll({ top: 0 });
 	}
 
-	// useEffect(() => {
-	// 	getDataFromPantip();
-	// }, []);
+	useEffect(() => {
+		getDataFromPantip();
+	}, []);
 
 	return (
 		<div className="bg-gray-100 ">
